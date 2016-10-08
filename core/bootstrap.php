@@ -15,8 +15,8 @@
 //$query = new QueryBuilder($pdo);
 //$query = new QueryBuilder(Connection::make());
 $config = require ('config.php');
-require ('classes/database/QueryBuilder.php');
-require ('classes/database/Connection.php');
+require ('database/QueryBuilder.php');
+require ('database/Connection.php');
 /**
  * Passes our PDO connection to our QueryBuilder
  * All builder methods are now available connected to DB name in connection

@@ -13,7 +13,7 @@
  *
  */
 //Instance of QueryBuilder connected to connections database
-$query = require ('bootstrap.php');
+$query = require ('core/bootstrap.php');
 
 /**
  * Naming a tables query
@@ -39,4 +39,4 @@ $tasks = $query->selectAll('todos');
 /**
  * loads the view, giving it all of index's assets
  */
-require ('index.view.php');
+require ('views/index.view.php');
