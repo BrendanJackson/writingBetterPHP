@@ -12,31 +12,19 @@
  * and builds any queries with the QueryBuilder class
  *
  */
-//Instance of QueryBuilder connected to connections database
-$query = require ('core/bootstrap.php');
+//LOAD CORE>Instance of QueryBuilder connected to connections database
+$database = require ('core/bootstrap.php');
 
-/**
- * Naming a tables query
- * $tablesPurpose = $query->selectAll($table);
- */
+//create a new $router
+$router = new Router;
 
+//require
+require ('routes.php');
+$uri = $_SERVER['REQUEST_URI'];
+require $router->direct($uri);
+//var_dump($router->direct('about/culture'));
+//$uri = trim($_SERVER['REQUEST_URI'], '/');
+//require $router->direct(trim($_SERVER['REQUEST_URI']), '/');
 
-//require ('classes/Task.php');
-
-$tasks = $query->selectAll('todos');
-/**
- * Iterates over through array
- * Returns foo for each item of an array, similar to foreach
- * Think foreach $tasks as ($task) perform function
- * foreach may be faster?
- * */
-//$tasks = array_map(function ($task){
-//    return 'foo';
-//}, $tasks);
-//var_dump($tasks);
-
-
-/**
- * loads the view, giving it all of index's assets
- */
-require ('views/index.view.php');
+//require Router::load('routes.php')
+//    ->direct($uri);

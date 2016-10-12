@@ -14,7 +14,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
-<h1>My Contact Page</h1>
+<h1>Contact</h1>
 
 
 </body>
